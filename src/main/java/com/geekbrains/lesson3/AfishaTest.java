@@ -21,6 +21,7 @@ public class AfishaTest {
         //loginButton.click();
         driver.findElement(By.xpath("//button[.='Войти']")).click();
         driver.switchTo().frame(driver.findElement(By.xpath("//iframe[contains(@src,'login')]")));
+        //driver.switchTo().parentFrame(); - если фрейм не закрылся, надо переключится
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login")));
         driver.findElement(By.id("login")).sendKeys("rasl_24@mail.ru");
         driver.findElement(By.id("password")).sendKeys("Test1234");
