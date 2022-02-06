@@ -1,5 +1,6 @@
 package com.geekbrains.lesson6;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,6 +22,7 @@ public class MoviePage extends BasePage{
     @FindBy(xpath = LIKE_BUTTON_LOCATOR_BY_XPATH)
     private WebElement likeButton;
 
+    @Step("Добавить фильм в избранное")
     public MoviePage likeFilm(){
         webDriverWait.until(ExpectedConditions.
                 visibilityOfElementLocated(By.xpath
@@ -33,6 +35,7 @@ public class MoviePage extends BasePage{
     @FindBy(xpath = ADDED_TO_FAVORITES_BY_XPATH)
     private WebElement addedToFavoritesElement;
 
+    @Step("Проверить, что фильм добавился в избранное")
     public MoviePage checkFilmAddedToFavorites(){
         webDriverWait.until(ExpectedConditions.
                 presenceOfAllElementsLocatedBy(By.xpath(ADDED_TO_FAVORITES_BY_XPATH)));
